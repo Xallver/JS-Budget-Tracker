@@ -29,8 +29,8 @@ After performing a git clone of this repository:
 * Mongoose
 
 ### Links
-[GitHub Repo]()
-[Heroku Live]()
+[GitHub Repo](https://github.com/Xallver/JS-Budget-Tracker)
+[Heroku](https://js-budget-tracker22.herokuapp.com/)
 
 ## Contributors
 [James Stanley](https://www.GitHub.com/Xallver)
