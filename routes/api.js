@@ -1,6 +1,6 @@
 // Dependencies
 const router = require("express").Router();
-const Transaction = require("../models/transaction.js");
+const Transaction = require("../models/transaction");
 
 // post routes
 router.post("/api/transaction", ({body}, res) => {
