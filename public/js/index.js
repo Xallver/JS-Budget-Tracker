@@ -29,7 +29,7 @@ function populateTable() {
   tbody.innerHTML = "";
 
   transactions.forEach(transaction => {
-    // create and populate a table row
+    // create & populates a tablerow
     let tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${transaction.name}</td>
@@ -41,11 +41,11 @@ function populateTable() {
 }
 
 function populateChart() {
-  // copy array and reverse it
+  // copys the array and reverses it
   let reversed = transactions.slice().reverse();
   let sum = 0;
 
-  // create date labels for chart
+  // creates the date labels for our chart
   let labels = reversed.map(t => {
     let date = new Date(t.date);
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
