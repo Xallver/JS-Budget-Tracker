@@ -9,13 +9,14 @@ This offline Budget Tracker is a progressive web applicate that lets a use keep 
 - [Screenshots](#Screenshots)
 - [Links](#Links)
 - [Contributors](#Contributors)
-- [Reach Out](#Contact)
+- [Reach Out](#Questions)
 
 ## Installation
 After performing a git clone of this repository:
 - run `npm install` in the command line.
 - then type `npm start` to start the application server.
 - Open the application in the browser with `localhost:3001`
+- Deployed through Heroku (https://js-budget-tracker22.herokuapp.com/)
 
 ## Deployment
 ### Screenshots
