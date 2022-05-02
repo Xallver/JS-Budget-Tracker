@@ -24,8 +24,8 @@ const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 // log the cache that is installing
-self.addEventListener('install', function (e) {
-    e.waitUntil(
+self.addEventListener('install', function (evt) {
+    evt.waitUntil(
         caches.open(CACHE_NAME).then(function (cache) {
             console.log('installing cache : ' + CACHE_NAME)
             return cache.addAll(FILE_TO_CACHE)
@@ -34,8 +34,8 @@ self.addEventListener('install', function (e) {
 });
 
 // activate and delete cache
-self.addEventListener('activate', function (e) {
-    e.waitUntil(
+self.addEventListener('activate', function (evt) {
+    evt.waitUntil(
         caches.keys().then(function (keyList) {
             let cacheKeeplist = keyList.filter(function (key) {
                 return key.indexOf(APP_PREFIX);
@@ -57,16 +57,16 @@ self.addEventListener('activate', function (e) {
 });
 
 // retrieve needed cache 
-self.addEventListener('fetch', function (e) {
-    console.log('fetch request : ' + e.request.url)
-    e.respondWith(
-        caches.match(e.request).then(function (request) {
+self.addEventListener('fetch', function (evt) {
+    console.log('fetch request : ' + evt.request.url)
+    evt.respondWith(
+        caches.match(evt.request).then(function (request) {
             if (request) {
-                console.log('responding with cache : ' + e.request.url)
+                console.log('responding with cache : ' + evt.request.url)
                 return request
             } else {
-                console.log('file is not cached, fetching : ' + e.request.url)
-                return fetch(e.request)
+                console.log('file is not cached, fetching : ' + evt.request.url)
+                return fetch(evt.request)
             }
         })
 
